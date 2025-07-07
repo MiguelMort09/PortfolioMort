@@ -1,7 +1,5 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowLeft, Shield, Eye, Lock, Mail } from "lucide-react"
+import {  Eye, Lock, Mail } from "lucide-react"
 import Header from "@/app/components/header";
 
 export default function PrivacyPolicy() {

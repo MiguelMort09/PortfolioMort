@@ -1,7 +1,7 @@
 'use client'
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import {ExternalLink, Github, Rocket, Store, University, Users, Zap} from 'lucide-react'
+import {ExternalLink, Github, Rocket, University, Users, Zap} from 'lucide-react'
 
 const projects = [
   {

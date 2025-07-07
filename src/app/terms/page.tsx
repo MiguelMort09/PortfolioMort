@@ -1,7 +1,5 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowLeft, FileText, Handshake, AlertTriangle, Scale } from "lucide-react"
+import { Handshake, AlertTriangle, Scale } from "lucide-react"
 import Header from "@/app/components/header";
 
 export default function TermsOfService() {
@@ -24,7 +22,7 @@ export default function TermsOfService() {
                         <CardContent className="space-y-4">
                             <p className="text-muted-foreground leading-relaxed">
                                 Estos Términos de Servicio rigen el uso de los servicios de desarrollo web proporcionados por
-                                <strong> Miguel Uicab</strong> (en adelante "Mort.dev", "nosotros", "nuestro"). Al contratar nuestros
+                                <strong> Miguel Uicab</strong> (en adelante Mort.dev, nosotros, nuestro). Al contratar nuestros
                                 servicios, aceptas estos términos en su totalidad.
                             </p>
                             <p className="text-muted-foreground leading-relaxed">
