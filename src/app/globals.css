@@ -1,8 +1,40 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --radius: 0.75rem;
+  --background: 15 15 15;
+  --foreground: 241 245 249;
+  --card: 30 41 59;
+  --card-foreground: 241 245 249;
+  --popover: 30 41 59;
+  --popover-foreground: 241 245 249;
+  --primary: 56 189 248;
+  --primary-foreground: 15 15 15;
+  --secondary: 129 140 248;
+  --secondary-foreground: 241 245 249;
+  --muted: 30 41 59;
+  --muted-foreground: 148 163 184;
+  --accent: 30 41 59;
+  --accent-foreground: 241 245 249;
+  --destructive: 239 68 68;
+  --destructive-foreground: 248 250 252;
+  --border: 30 41 59;
+  --input: 30 41 59;
+  --ring: 56 189 248;
+  --chart-1: 56 189 248;
+  --chart-2: 129 140 248;
+  --chart-3: 168 85 247;
+  --chart-4: 34 197 94;
+  --chart-5: 251 146 60;
+  --sidebar: 15 15 15;
+  --sidebar-foreground: 241 245 249;
+  --sidebar-primary: 56 189 248;
+  --sidebar-primary-foreground: 15 15 15;
+  --sidebar-accent: 30 41 59;
+  --sidebar-accent-foreground: 241 245 249;
+  --sidebar-border: 30 41 59;
+  --sidebar-ring: 56 189 248;
 }
 
 @theme inline {
@@ -10,17 +42,221 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.dark {
+  --background: oklch(0.059 0 0); /* #0f0f0f */
+  --foreground: oklch(0.961 0 0); /* #f1f5f9 */
+  --card: oklch(0.176 0 0); /* #1e293b */
+  --card-foreground: oklch(0.961 0 0); /* #f1f5f9 */
+  --popover: oklch(0.176 0 0); /* #1e293b */
+  --popover-foreground: oklch(0.961 0 0); /* #f1f5f9 */
+  --primary: oklch(0.748 0.084 199.228); /* #38bdf8 */
+  --primary-foreground: oklch(0.059 0 0); /* #0f0f0f */
+  --secondary: oklch(0.708 0.108 264.052); /* #818cf8 */
+  --secondary-foreground: oklch(0.961 0 0); /* #f1f5f9 */
+  --muted: oklch(0.176 0 0); /* #1e293b */
+  --muted-foreground: oklch(0.647 0 0); /* #94a3b8 */
+  --accent: oklch(0.176 0 0); /* #1e293b */
+  --accent-foreground: oklch(0.961 0 0); /* #f1f5f9 */
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(0.176 0 0); /* #1e293b */
+  --input: oklch(0.176 0 0); /* #1e293b */
+  --ring: oklch(0.748 0.084 199.228); /* #38bdf8 */
+  --chart-1: oklch(0.748 0.084 199.228);
+  --chart-2: oklch(0.708 0.108 264.052);
+  --chart-3: oklch(0.627 0.265 303.9);
+  --chart-4: oklch(0.696 0.17 162.48);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.059 0 0);
+  --sidebar-foreground: oklch(0.961 0 0);
+  --sidebar-primary: oklch(0.748 0.084 199.228);
+  --sidebar-primary-foreground: oklch(0.059 0 0);
+  --sidebar-accent: oklch(0.176 0 0);
+  --sidebar-accent-foreground: oklch(0.961 0 0);
+  --sidebar-border: oklch(0.176 0 0);
+  --sidebar-ring: oklch(0.748 0.084 199.228);
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent;
+  }
+
+  .glass-effect {
+    @apply bg-background/80 backdrop-blur-sm border border-border/50;
+  }
+
+  .hover-glow {
+    @apply hover:shadow-lg hover:shadow-primary/25 transition-shadow duration-300;
+  }
+
+  /* Background effects with pseudo-elements */
+  .pricing-bg::before {
+    content: "";
+    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl;
+  }
+
+  .projects-bg::before {
+    content: "";
+    @apply absolute top-1/4 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl;
+  }
+
+  .clients-bg::before {
+    content: "";
+    @apply absolute top-1/3 left-1/3 w-96 h-96 bg-primary/5 rounded-full blur-3xl;
+  }
+
+  .cta-bg::before {
+    content: "";
+    @apply absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl;
+  }
+
+  .cta-bg::after {
+    content: "";
+    @apply absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl;
+  }
+
+  /* Timeline line */
+  .timeline-container::before {
+    content: "";
+    @apply absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-primary transform md:-translate-x-0.5;
+  }
+
+  /* Hero background effects using pseudo-elements */
+  .hero-bg::before {
+    content: "";
+    @apply absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse;
+  }
+
+  .hero-bg::after {
+    content: "";
+    @apply absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse;
+    animation-delay: 1000ms;
+  }
+
+  /* Services background effect */
+  .services-bg::before {
+    content: "";
+    @apply absolute inset-0 bg-gradient-to-b from-transparent via-muted/5 to-transparent;
+  }
+
+  /* Terminal container with floating effects */
+  .terminal-container::before {
+    content: "";
+    @apply absolute -top-4 -right-4 w-16 h-16 sm:w-20 sm:h-20 bg-primary/10 rounded-full blur-xl;
+  }
+
+  .terminal-container::after {
+    content: "";
+    @apply absolute -bottom-6 -left-6 w-24 h-24 sm:w-32 sm:h-32 bg-secondary/10 rounded-full blur-xl;
+  }
+
+  /* Floating tech cards */
+  .floating-card {
+    @apply absolute z-30 bg-card border-2 border-primary/20 rounded-lg p-2 sm:p-3 shadow-xl backdrop-blur-sm font-mono text-xs font-semibold text-primary;
+  }
+
+  .floating-card-react {
+    @apply -top-4 -left-4 sm:-top-6 sm:-left-6 rotate-12;
+  }
+
+  .floating-card-laravel {
+    @apply -bottom-3 -right-4 sm:-bottom-4 sm:-right-6 -rotate-12;
+  }
+
+  /* Profile container with CSS pseudo-elements for background effects */
+  .profile-container::before {
+    content: "";
+    @apply absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl;
+  }
+
+  .profile-container::after {
+    content: "";
+    @apply absolute inset-4 bg-gradient-to-tr from-secondary/10 to-primary/10 rounded-full;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 1s ease-out;
+  }
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f0f0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+
