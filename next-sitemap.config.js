@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://test.miguelmort.tech',
+  siteUrl: 'https://miguelmort.tech',
   generateRobotsTxt: true, // genera automáticamente robots.txt
   changefreq: 'monthly',
   priority: 0.7,
