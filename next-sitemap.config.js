@@ -21,7 +21,7 @@ module.exports = {
       },
     ],
     additionalSitemaps: [
-      'https://test.miguelmort.tech/sitemap.xml',
+      'https://miguelmort.tech/sitemap.xml',
     ],
   },
 };
