@@ -1,38 +1,47 @@
+'use client'
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Github, Rocket, Store, Users, Zap } from 'lucide-react'
+import {ExternalLink, Github, Rocket, Store, University, Users, Zap} from 'lucide-react'
 
 const projects = [
   {
-    title: "EcommerceFlow",
-    description:
-        "Plataforma de e-commerce completa con panel administrativo, gestión de inventario y analytics en tiempo real.",
-    tech: ["Laravel", "React", "Inertia.js", "Stripe"],
-    icon: Store,
+    title: "Sayci",
+    description: "Plataforma web para la gestión integral de alumnos, carreras y procesos académicos universitarios.",
+    tech: ["Laravel", "Livewire", "Tailwind CSS", "Docker", "NGINX"],
+    icon: University,          // Cambia Store por University (o el icono que prefieras)
     status: "Activo",
-    users: "500+ usuarios",
-    color: "from-blue-500 to-cyan-500",
+    users: "Más de 200 usuarios",  // Modificado para mayor alcance
+    color: "from-purple-600 to-indigo-500",  // Nuevo degradado de color
+    projectPrivate: true,
+    codePublic: false,
+    urlDemo: null
   },
   {
-    title: "TaskMaster Pro",
-    description:
-        "Aplicación de gestión de proyectos con colaboración en tiempo real, notificaciones push y reportes avanzados.",
+    title: "KOVAYA'S POS",
+    description: "Aplicación de punto de venta con gestión de inventarios, ventas y reportes en tiempo real, optimizada para flujo rápido en comercios.",
     tech: ["Laravel", "Livewire", "Alpine.js", "WebSockets"],
     icon: Users,
-    status: "En desarrollo",
-    users: "Beta testing",
+    status: "En fase piloto",
+    users: "10 negocios activos",
     color: "from-purple-500 to-pink-500",
+    projectPrivate: false,
+    codePublic: false,
+    urlDemo: 'https://app-pos.kovaya.com.mx'
   },
   {
-    title: "AnalyticsDash",
-    description:
-        "Dashboard de analytics personalizable con integración a múltiples fuentes de datos y visualizaciones interactivas.",
+    title: "KOVAYA'S GYM",
+    description: "Dashboard analytics personalizable para gimnasios con seguimiento de membresías, asistencia y métricas de rendimiento.",
     tech: ["React", "TypeScript", "Chart.js", "Laravel API"],
     icon: Zap,
-    status: "Lanzamiento próximo",
-    users: "Pre-registro",
+    status: "En fase piloto",
+    users: "7 gimnasios en uso",
     color: "from-green-500 to-emerald-500",
-  },
+    projectPrivate: false,
+    codePublic: false,
+    urlDemo: 'https://app-gym.kovaya.com.mx'
+  }
+
+
 ]
 
 export default function ProjectsSection() {
@@ -41,10 +50,10 @@ export default function ProjectsSection() {
         <div className="w-full mx-auto container relative px-4 space-y-6">
           <header>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
-              Mis <span className="gradient-text">Proyectos</span>
+              Proyectos <span className="gradient-text">Destacados</span>
             </h2>
             <p className="text-lg text-muted-foreground">
-              Emprendimientos y aplicaciones que he desarrollado, desde la idea hasta la implementación
+              Una selección de proyectos y aplicaciones sobresalientes que he desarrollado para clientes y como iniciativas propias.
             </p>
           </header>
 
@@ -87,14 +96,38 @@ export default function ProjectsSection() {
 
                     {/* Actions */}
                     <div className="flex gap-2 pt-2">
-                      <Button size="sm" variant="outline" className="flex-1 text-xs bg-transparent">
-                        <Github className="h-3 w-3 mr-1" />
-                        Código
-                      </Button>
-                      <Button size="sm" className="flex-1 text-xs bg-primary hover:bg-primary/90">
-                        <ExternalLink className="h-3 w-3 mr-1" />
-                        Demo
-                      </Button>
+                      {project.projectPrivate ? (
+                          <Button
+                              size="sm"
+                              variant="outline"
+                              className="flex-1 text-xs cursor-not-allowed"
+                              disabled
+                              title="Proyecto privado"
+                          >
+                            <Github className="h-3 w-3 mr-1 opacity-50" />
+                            Proyecto privado
+                          </Button>
+                      ) : (
+                          <>
+                            {project.codePublic && (
+                                <Button size="sm" variant="outline" className="flex-1 text-xs bg-transparent">
+                                  <Github className="h-3 w-3 mr-1" />
+                                  Código
+                                </Button>
+                            )}
+
+                            {project.urlDemo && (
+                                <Button
+                                    size="sm"
+                                    className="flex-1 text-xs bg-primary hover:bg-primary/90"
+                                    onClick={() => window.open(project.urlDemo, "_blank")}
+                                >
+                                  <ExternalLink className="h-3 w-3 mr-1" />
+                                  Visitar sitio
+                                </Button>
+                            )}
+                          </>
+                      )}
                     </div>
                   </Card>
               )
