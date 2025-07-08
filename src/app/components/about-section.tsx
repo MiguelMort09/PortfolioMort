@@ -65,7 +65,7 @@ export default function AboutSection() {
               }`}
           >
             {/* Personal Photo - Simplified Structure */}
-            <div className="relative mx-auto w-80 h-80 lg:w-96 lg:h-96 profile-container">
+            <div className="relative mx-auto size-28 lg:w-96 lg:h-96 profile-container">
               <Image
                   src="/profile.jpg"
                   width={400}

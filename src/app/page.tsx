@@ -10,18 +10,14 @@ import ClientsSection from "@/app/components/clients-section";
 
 export default function Home() {
   return (
-      <div className="min-h-screen bg-background text-foreground">
-          <Header/>
-          <main>
-              <HeroSection/>
-              <ServicesSection/>
-              <AboutSection/>
-              <ProjectsSection/>
-              <ExperienceSection/>
-              <ClientsSection/>
-              <CTASection/>
-        </main>
-        <Footer/>
-      </div>
+      <main>
+          <HeroSection/>
+          <ServicesSection/>
+          <AboutSection/>
+          <ProjectsSection/>
+          <ExperienceSection/>
+          <ClientsSection/>
+          <CTASection/>
+    </main>
   );
 }

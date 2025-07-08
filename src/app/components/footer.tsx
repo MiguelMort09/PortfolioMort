@@ -20,7 +20,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-background border-t border-muted">
-        <div className="container mx-auto px-4 py-12 ">
+        <div className="w-full container mx-auto px-4 py-12 ">
         <div className="grid gap-8 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-2">
@@ -85,16 +85,6 @@ export default function Footer() {
             <div>
               <h4 className="font-medium mb-3 text-foreground">Newsletter</h4>
               <p className="text-sm text-muted-foreground mb-3">Recibe tips y actualizaciones sobre desarrollo web</p>
-              <div className="flex gap-2">
-                <input
-                  type="email"
-                  placeholder="tu@email.com"
-                  className="flex-1 px-3 py-2 text-sm border border-muted rounded-md bg-background text-foreground focus:border-primary focus:outline-none"
-                />
-                <button className="px-4 py-2 text-sm bg-primary text-background rounded-md hover:bg-primary/90 transition-colors font-medium">
-                  Suscribir
-                </button>
-              </div>
             </div>
           </div>
         </div>

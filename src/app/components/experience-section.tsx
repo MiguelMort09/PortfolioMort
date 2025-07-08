@@ -37,7 +37,7 @@ const experiences = [
 export default function ExperienceSection() {
   return (
       <section id="experiencia" className="py-20 bg-muted/20">
-        <div className="container px-4 mx-auto max-w-4xl text-center">
+        <div className="container px-4 mx-auto lg:max-w-4xl text-center">
           <div className="mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
               Mi <span className="gradient-text">Experiencia</span>
@@ -64,7 +64,7 @@ export default function ExperienceSection() {
                       {/* Content */}
                       <div className={`w-full md:w-1/2 ${index % 2 === 0 ? "md:pr-8" : "md:pl-8"} ml-12 md:ml-0`}>
                         <Card className="bg-card/50 border-muted hover:border-primary/50 transition-all duration-300 hover-glow backdrop-blur-sm">
-                          <CardContent className="p-6">
+                          <CardContent>
                             {/* Header */}
                             <div className="mb-4">
                               <div
