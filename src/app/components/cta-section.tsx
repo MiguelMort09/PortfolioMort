@@ -4,7 +4,7 @@ import { ArrowRight, MessageCircle } from "lucide-react"
 
 export default function CTASection() {
     return (
-        <section className="py-20 bg-gradient-to-br from-muted/50 to-muted/20 relative overflow-hidden cta-bg">
+        <section className="py-20 bg-gradient-to-br from-muted/50 to-muted/20 relative overflow-hidden">
             <div className="container mx-auto max-w-4xl text-center relative px-4">
                     <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-6">
                         ¿Listo para lanzar tu proyecto con <span className="gradient-text">tecnología moderna</span>?
@@ -40,13 +40,13 @@ export default function CTASection() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                         <div className="group">
                             <div className="text-3xl font-bold gradient-text mb-2 group-hover:scale-110 transition-transform">
-                                50+
+                                10+
                             </div>
                             <div className="text-muted-foreground">Proyectos Completados</div>
                         </div>
                         <div className="group">
                             <div className="text-3xl font-bold gradient-text mb-2 group-hover:scale-110 transition-transform">
-                                98%
+                                90%
                             </div>
                             <div className="text-muted-foreground">Satisfacción del Cliente</div>
                         </div>

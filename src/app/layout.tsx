@@ -3,15 +3,16 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { GoogleTagManager } from '@next/third-parties/google'
-import Header from "@/app/components/header";
 import Footer from "@/app/components/footer";
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-    title: "Mort.dev - Desarrollo Web Moderno",
-    description: "Ingeniero en Tecnologías de Software especializado en Laravel, React, Livewire e Inertia.js",
-    generator: 'v0.dev'
+    title: "MiguelMort.tech",
+    description: "Ingeniero en Tecnologías de Software especializado en Laravel",
+    authors: [
+        { name: "MIGUEL E UICAB CANABAL" }
+    ],
 }
 
 export default function RootLayout({
@@ -22,8 +23,7 @@ export default function RootLayout({
     return (
         <html lang="es" className="dark">
         <GoogleTagManager gtmId="GTM-XYZ" />
-        <body className={`min-h-screen antialiased bg-background text-foreground ${inter.className}`}>
-        <Header/>
+        <body className={`min-h-screen antialiased bg-background text-foreground   ${inter.className}`}>
         {children}
         <Footer/>
         </body>

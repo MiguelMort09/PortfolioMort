@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Github, Linkedin, Twitter, Mail, MapPin, Phone } from "lucide-react"
+import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -12,10 +12,9 @@ export default function Footer() {
   ]
 
   const socialLinks = [
-    { name: "GitHub", href: "#", icon: Github },
-    { name: "LinkedIn", href: "#", icon: Linkedin },
-    { name: "Twitter", href: "#", icon: Twitter },
-    { name: "Email", href: "mailto:contact@mort.dev", icon: Mail },
+    { name: "GitHub", href: "https://github.com/MiguelMort09", icon: Github },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/miguel-ernesto-uicab-canabal-2b72601bb/", icon: Linkedin },
+    { name: "Email", href: "mailto:contact@miguelmort.tech", icon: Mail },
   ]
 
   return (
@@ -28,7 +27,7 @@ export default function Footer() {
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-secondary text-background font-bold">
                 M
               </div>
-              <span className="text-xl font-bold gradient-text">Mort.dev</span>
+              <span className="text-xl font-bold gradient-text">MIGUELMORT.TECH</span>
             </Link>
             <p className="text-muted-foreground mb-6 leading-relaxed max-w-md">
               Ingeniero en Tecnologías de Software especializado en desarrollo web moderno. Creando experiencias
@@ -43,11 +42,11 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary" />
-                <span>contact@mort.dev</span>
+                <span>contact@miguelmort.tech</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
-                <span>+52 (555) 123-4567</span>
+                <span>+52 (982) 102-9769</span>
               </div>
             </div>
           </div>
