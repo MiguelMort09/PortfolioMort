@@ -62,7 +62,7 @@ export default function ClientsSection() {
             }}>
               <CarouselContent>
                 {clients.map((client, index) => (
-                    <CarouselItem className="w-full md:basis-1/2 content-center" key={index}>
+                    <CarouselItem className="md:basis-1/2 content-center" key={index}>
                       <Card className="group bg-card/50 border-muted hover:border-primary/50 transition-all duration-300 hover-glow backdrop-blur-sm">
                         <CardHeader>
                           <div className="flex items-center gap-4">
