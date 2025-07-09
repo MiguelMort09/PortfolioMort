@@ -1,9 +1,6 @@
 "use client"
 
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, MessageCircle } from "lucide-react"
-import { motion, Variants } from "framer-motion"
+import { motion, type Variants } from "framer-motion"
 
 const containerVariants: Variants = {
     hidden: {},
@@ -20,7 +17,7 @@ const fadeUpVariants: Variants = {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 }
 
-const scaleHover = {
+const scaleHoverVariants: Variants = {
     rest: { scale: 1 },
     hover: { scale: 1.1, transition: { duration: 0.3, ease: "easeOut" } },
 }
@@ -36,41 +33,12 @@ export default function CTASection() {
                     variants={fadeUpVariants}
                 >
                     <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-6">
-                        ¿Listo para lanzar tu proyecto con{" "}
-                        <span className="gradient-text">tecnología moderna</span>?
+                        ¿Listo para lanzar tu proyecto con <span className="gradient-text">tecnología moderna</span>?
                     </h2>
                     <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
-                        Trabajemos juntos para crear la aplicación web que tu negocio necesita.
-                        Con Laravel, React y las mejores prácticas de desarrollo.
+                        Trabajemos juntos para crear la aplicación web que tu negocio necesita. Con Laravel, React y las mejores
+                        prácticas de desarrollo.
                     </p>
-                </motion.div>
-
-                <motion.div
-                    className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.3 }}
-                    variants={containerVariants}
-                >
-                    <Button
-                        size="lg"
-                        asChild
-                        className="text-base bg-primary hover:bg-primary/90 text-background font-semibold hover-glow"
-                    >
-                        <Link href="#contacto">
-                            <MessageCircle className="mr-2 h-5 w-5" />
-                            Hablemos Hoy
-                            <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
-                    </Button>
-                    <Button
-                        size="lg"
-                        variant="outline"
-                        asChild
-                        className="text-base border-primary text-primary hover:bg-primary hover:text-background bg-transparent"
-                    >
-                        <Link href="#proyectos">Ver Casos de Éxito</Link>
-                    </Button>
                 </motion.div>
 
                 {/* Stats */}
@@ -94,10 +62,7 @@ export default function CTASection() {
                             whileHover="hover"
                             animate="rest"
                         >
-                            <motion.div
-                                className="text-3xl font-bold gradient-text mb-2"
-                                variants={scaleHover}
-                            >
+                            <motion.div className="text-3xl font-bold gradient-text mb-2" variants={scaleHoverVariants}>
                                 {value}
                             </motion.div>
                             <div className="text-muted-foreground">{label}</div>
