@@ -1,29 +1,59 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+"use client";
+
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import TechStack from "@/app/components/partials/tech-stack";
+import { motion, Variants } from "framer-motion";
+
+const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2,
+            ease: "easeOut",
+            duration: 0.6,
+        },
+    },
+};
+
+const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 export default function HeroSection() {
     return (
-        <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden hero-bg">
+        <motion.section
+            id="inicio"
+            className="relative min-h-screen flex items-center justify-center overflow-hidden hero-bg"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={containerVariants}
+        >
             <div className="container mx-auto relative px-4 py-20 grid lg:grid-cols-2 gap-8">
-                <div className="space-y-8">
+                <motion.div className="space-y-8" variants={containerVariants}>
                     {/* Badge */}
-                    <div className="inline-flex items-center rounded-full glass-effect px-4 py-2 text-sm font-medium animate-fade-in">
+                    <motion.div
+                        variants={itemVariants}
+                        className="inline-flex items-center rounded-full glass-effect px-4 py-2 text-sm font-medium"
+                    >
                         <div className="mr-2 h-2 w-2 rounded-full bg-primary animate-pulse" />
                         Disponible para nuevos proyectos
-                    </div>
+                    </motion.div>
 
                     {/* Personal Introduction */}
-                    <div className="space-y-4 animate-fade-in">
+                    <motion.div className="space-y-4" variants={itemVariants}>
                         <p className="text-lg text-muted-foreground">Hola, soy</p>
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
                             <span className="gradient-text">Miguel Uicab</span>
                         </h1>
-                    </div>
+                    </motion.div>
 
                     {/* Role & Expertise */}
-                    <div className="space-y-4 animate-fade-in">
+                    <motion.div className="space-y-4" variants={itemVariants}>
                         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground">
                             Desarrollador Web <span className="gradient-text">Fullstack</span>
                         </h2>
@@ -33,10 +63,10 @@ export default function HeroSection() {
                             <span className="text-primary font-semibold">React</span>. Desarrollador orientado a crear soluciones web
                             modernas, escalables y optimizadas.
                         </p>
-                    </div>
+                    </motion.div>
 
                     {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
+                    <motion.div className="flex flex-col sm:flex-row gap-4" variants={itemVariants}>
                         <Button
                             size="lg"
                             asChild
@@ -55,17 +85,20 @@ export default function HeroSection() {
                         >
                             <Link href="#contacto">Hablemos</Link>
                         </Button>
-                    </div>
+                    </motion.div>
 
                     {/* Tech Stack */}
-                    <div className="animate-slide-in">
+                    <motion.div variants={itemVariants}>
                         <p className="text-sm text-muted-foreground mb-4 font-medium">Tecnologías principales:</p>
                         <TechStack />
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
-                {/* Terminal Component - Simplified */}
-                <div className="order-first lg:order-last content-center">
+                {/* Terminal Component */}
+                <motion.div
+                    className="order-first lg:order-last content-center"
+                    variants={itemVariants}
+                >
                     <div className="relative w-full max-w-md mx-auto lg:max-w-none terminal-container">
                         <div className="bg-card border rounded-2xl p-4 sm:p-6 shadow-2xl relative z-10">
                             <div className="flex items-center space-x-2 mb-4">
@@ -101,15 +134,11 @@ export default function HeroSection() {
                                 </div>
                                 <div className="pl-3 sm:pl-4">
                                     <span className="text-orange-400">&quot;frontend&quot;</span>:{" "}
-                                    <span className="text-green-400">
-      [&quot;React&quot;, &quot;Livewire&quot;, &quot;Vue.js&quot;, &quot;JavaScript&quot;]
-    </span>,
+                                    <span className="text-green-400">[&quot;React&quot;, &quot;Livewire&quot;, &quot;Vue.js&quot;, &quot;JavaScript&quot;]</span>,
                                 </div>
                                 <div className="pl-3 sm:pl-4">
                                     <span className="text-orange-400">&quot;devops&quot;</span>:{" "}
-                                    <span className="text-green-400">
-      [&quot;Docker&quot;, &quot;Ubuntu&quot;, &quot;Nginx&quot;, &quot;Cloudflare&quot;]
-    </span>,
+                                    <span className="text-green-400">[&quot;Docker&quot;, &quot;Ubuntu&quot;, &quot;Nginx&quot;, &quot;Cloudflare&quot;]</span>,
                                 </div>
                                 <div className="pl-3 sm:pl-4">
                                     <span className="text-orange-400">&quot;passion&quot;</span>:{" "}
@@ -119,20 +148,24 @@ export default function HeroSection() {
                                 <div className="text-green-400 mt-3 sm:mt-4">$ _</div>
                             </div>
                         </div>
-
-                        {/* Floating Tech Cards - Simplified */}
+                        {/* Floating Tech Cards */}
                         <div className="floating-card floating-card-react hidden sm:block">React.js</div>
                         <div className="floating-card floating-card-laravel hidden sm:block">Laravel</div>
                     </div>
-                </div>
+                </motion.div>
             </div>
 
             {/* Scroll Indicator */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <motion.div
+                className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1 }}
+            >
                 <div className="w-6 h-10 border-2 border-muted rounded-full flex justify-center">
                     <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse" />
                 </div>
-            </div>
-        </section>
-    )
+            </motion.div>
+        </motion.section>
+    );
 }

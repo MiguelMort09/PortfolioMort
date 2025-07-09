@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { Card } from "@/components/ui/card"
-import { Code, Database, Zap, Rocket } from "lucide-react"
-import { useEffect, useRef, useState } from "react"
+import { Card } from "@/components/ui/card";
+import { Code, Database, Zap, Rocket } from "lucide-react";
+import { motion, Variants } from "framer-motion";
 
 const services = [
   {
@@ -29,49 +29,43 @@ const services = [
     description: "Pipeline CI/CD, entornos staging y producción con monitoreo y optimización constante.",
     features: ["Docker containers", "GitHub Actions", "Performance optimization", "Monitoring"],
   },
-]
+];
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      staggerChildren: 0.2,
+      when: "beforeChildren",
+      ease: [0.77, 0, 0.175, 1],
+      duration: 0.6,
+    },
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
 
 export default function ServicesSection() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [animatedCards, setAnimatedCards] = useState<Set<number>>(new Set())
-  const sectionRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    const current = sectionRef.current; // ✅ Copiamos el ref a una variable local
-
-    const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            services.forEach((_, index) => {
-              setTimeout(() => {
-                setAnimatedCards((prev) => new Set([...prev, index]));
-              }, index * 200);
-            });
-          }
-        },
-        { threshold: 0.1 }
-    );
-
-    if (current) {
-      observer.observe(current);
-    }
-
-    return () => {
-      if (current) {
-        observer.unobserve(current);
-      }
-    };
-  }, []);
-
-
   return (
-      <section id="servicios" ref={sectionRef} className="py-20 relative services-bg">
-        <div
-            className={`w-full mx-auto container relative px-4 transition-all duration-1000 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-        >
+      <motion.section
+          id="servicios"
+          className="py-20 relative"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={containerVariants}
+      >
+        <div className="w-full mx-auto container relative px-4">
           {/* Header */}
           <header className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
@@ -83,41 +77,45 @@ export default function ServicesSection() {
           </header>
 
           {/* Services Grid */}
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
+          <motion.div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
             {services.map((service, index) => {
-              const Icon = service.icon
+              const Icon = service.icon;
               return (
-                  <Card
+                  <motion.div
                       key={index}
-                      className={`group bg-card/50 border-muted hover:border-primary/50 transition-all duration-300 hover-glow backdrop-blur-sm p-6 ${
-                          animatedCards.has(index) ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"
-                      }`}
+                      variants={cardVariants}
+                      className="group"
                   >
-                    {/* Service Header */}
-                    <div className="flex items-center gap-4 mb-6">
-                      <Icon className="h-12 w-12 p-3 text-primary bg-primary/10 group-hover:bg-primary/20 transition-colors rounded-lg flex-shrink-0" />
-                      <div>
-                        <h3 className="text-xl text-foreground group-hover:text-primary transition-colors font-semibold mb-2">
-                          {service.title}
-                        </h3>
-                        <p className="text-base text-muted-foreground">{service.description}</p>
+                    <Card className="bg-card/50 border-muted hover:border-primary/50 transition-all duration-300 hover-glow backdrop-blur-sm p-6">
+                      {/* Service Header */}
+                      <div className="flex items-center gap-4 mb-6">
+                        <Icon className="h-12 w-12 p-3 text-primary bg-primary/10 group-hover:bg-primary/20 transition-colors rounded-lg flex-shrink-0" />
+                        <div>
+                          <h3 className="text-xl text-foreground group-hover:text-primary transition-colors font-semibold mb-2">
+                            {service.title}
+                          </h3>
+                          <p className="text-base text-muted-foreground">{service.description}</p>
+                        </div>
                       </div>
-                    </div>
 
-                    {/* Features List */}
-                    <ul className="grid lg:grid-cols-2 gap-2">
-                      {service.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center text-sm text-muted-foreground">
-                            <div className="mr-3 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                            {feature}
-                          </li>
-                      ))}
-                    </ul>
-                  </Card>
-              )
+                      {/* Features List */}
+                      <ul className="grid lg:grid-cols-2 gap-2">
+                        {service.features.map((feature, featureIndex) => (
+                            <li
+                                key={featureIndex}
+                                className="flex items-center text-sm text-muted-foreground"
+                            >
+                              <div className="mr-3 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                              {feature}
+                            </li>
+                        ))}
+                      </ul>
+                    </Card>
+                  </motion.div>
+              );
             })}
-          </div>
+          </motion.div>
         </div>
-      </section>
-  )
+      </motion.section>
+  );
 }
