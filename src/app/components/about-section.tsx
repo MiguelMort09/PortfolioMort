@@ -43,8 +43,8 @@ export default function AboutSection() {
                   alt="Mort - Desarrollador"
                   className="w-full h-full object-cover rounded-full border-4 border-primary/20 shadow-2xl shadow-primary/10 relative z-10"
               />
-              <Coffee className="absolute -top-4 -right-4 w-12 h-12 p-3 bg-gradient-to-br from-primary to-secondary rounded-full text-white animate-bounce z-20" />
-              <Heart className="absolute -bottom-4 -left-4 w-10 h-10 p-2 bg-gradient-to-br from-secondary to-primary rounded-full text-white animate-pulse z-20" />
+              <Coffee className="absolute -top-4 -right-4 w-12 h-12 p-3 bg-gradient-to-br from-emerald-500 to-amber-500 rounded-full text-white animate-bounce z-20" />
+              <Heart className="absolute -bottom-4 -left-4 w-10 h-10 p-2 bg-gradient-to-br from-amber-500 to-emerald-500 rounded-full text-white animate-pulse z-20" />
             </motion.div>
 
             {/* Contenido Personal */}
@@ -52,7 +52,7 @@ export default function AboutSection() {
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
                 Más allá del <span className="gradient-text">código</span>
               </h2>
-              <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mb-6" />
+              <div className="w-20 h-1 bg-gradient-to-r from-emerald-500 to-amber-500 rounded-full mb-6" />
 
               <p className="text-muted-foreground leading-relaxed mb-4">
                 ¡Hola! Soy <span className="text-primary font-semibold">Miguel Uicab</span>, pero mis amigos me llaman{" "}

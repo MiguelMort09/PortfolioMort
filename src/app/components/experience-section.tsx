@@ -13,7 +13,7 @@ const experiences = [
     description:
         "Consultoría en desarrollo de aplicaciones web con servicios REST API para empresa multinacional. Uso de Azure DevOps bajo Scrum para gestión de proyectos. Administración de servicios intranet, integración con SAP y desarrollo móvil con Apache Cordova, garantizando soluciones completas y eficientes.",
     achievements: [],
-    color: "from-blue-600 to-indigo-600",
+    color: "from-emerald-600 to-teal-500",
   },
   {
     company: "JUNKYARD MEXICO",
@@ -23,7 +23,7 @@ const experiences = [
     description:
         "Participé en el desarrollo de aplicación CMDB con Laravel, docker, REST APIs y MySQL. Colaboré en la migración del sistema productivo asegurando continuidad operativa. Trabajo en equipo multicultural con Azure DevOps y Slack, fortaleciendo habilidades técnicas y colaboración internacional.",
     achievements: [],
-    color: "from-purple-600 to-pink-600",
+    color: "from-amber-600 to-yellow-500",
   },
   {
     company: "GRUPO ICARUS S.A. DE C.V",
@@ -33,7 +33,7 @@ const experiences = [
     description:
         "Desarrollo de aplicaciones web personalizadas en PHP (legacy y moderno). Implementación de pasarelas de pago, facturación electrónica vía API y reportes con JasperReports. Participación en planeación y desarrollo bajo Scrum. Optimización, dockerización y resolución de tickets para mejora continua.",
     achievements: [],
-    color: "from-green-500 to-emerald-500",
+    color: "from-emerald-500 to-green-500",
   },
 ]
 
@@ -84,7 +84,7 @@ export default function ExperienceSection() {
               variants={containerVariants}
           >
             {/* Línea timeline (solo visual, considera pasar a CSS para menos DOM) */}
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary via-secondary to-primary transform md:-translate-x-1/2 pointer-events-none" />
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-emerald-500 via-amber-500 to-emerald-500 transform md:-translate-x-1/2 pointer-events-none" />
 
             <div className="space-y-12">
               {experiences.map((exp, index) => (

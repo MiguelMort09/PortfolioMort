@@ -24,7 +24,7 @@ const scaleHoverVariants: Variants = {
 
 export default function CTASection() {
     return (
-        <section className="py-20 bg-gradient-to-br from-muted/50 to-muted/20 relative overflow-hidden">
+        <section className="py-20 bg-gradient-to-br from-emerald-950/20 to-amber-950/10 relative overflow-hidden">
             <div className="container mx-auto max-w-4xl text-center relative px-4">
                 <motion.div
                     initial="hidden"

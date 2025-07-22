@@ -23,7 +23,7 @@ const clients = [
     result: "80% menos de tickets de usuario",
     tech: ["Laravel", "MySQL", "Node", "Vite", "NGINX", "Docker", "Linux"],
     logo: "/logo_itec.png",
-    color: "from-indigo-500 to-sky-500",
+    color: "from-emerald-500 to-teal-500",
   },
   {
     name: "BigPrint",
@@ -34,7 +34,7 @@ const clients = [
     result: "-30% en tiempos de entrega",
     tech: ["Laravel", "Livewire", "MySQL"],
     logo: "/Innovart-Logo.png",
-    color: "from-orange-500 to-yellow-500",
+    color: "from-amber-500 to-yellow-500",
   },
 ]
 

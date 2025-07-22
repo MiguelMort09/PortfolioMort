@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api
+Disallow: /admin
+
+# Host
+Host: https://miguelmort.tech
+
+# Sitemaps
+Sitemap: https://miguelmort.tech/sitemap.xml

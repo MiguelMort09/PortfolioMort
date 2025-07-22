@@ -77,7 +77,7 @@ export default function PricingSection() {
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <div className="flex items-center gap-1 rounded-full bg-gradient-to-r from-primary to-secondary px-4 py-1.5 text-sm font-medium text-background">
+                  <div className="flex items-center gap-1 rounded-full bg-gradient-to-r from-emerald-500 to-amber-500 px-4 py-1.5 text-sm font-medium text-background">
                     <Star className="h-4 w-4" />
                     Más Popular
                   </div>
