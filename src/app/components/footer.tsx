@@ -27,7 +27,7 @@ export default function Footer() {
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-secondary text-background font-bold">
                 M
               </div>
-              <span className="text-xl font-bold gradient-text">MIGUELMORT.TECH</span>
+              <span className="text-xl font-bold gradient-text">MIGUELMORT.DEV</span>
             </Link>
             <p className="text-muted-foreground mb-6 leading-relaxed max-w-md">
               Ingeniero en Tecnologías de Software especializado en desarrollo web moderno. Creando experiencias
@@ -42,7 +42,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary" />
-                <span>contact@miguelmort.tech</span>
+                <span>contact@miguelmort.dev</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
@@ -80,16 +80,11 @@ export default function Footer() {
                 </Link>
               ))}
             </div>
-
-            <div>
-              <h4 className="font-medium mb-3 text-foreground">Newsletter</h4>
-              <p className="text-sm text-muted-foreground mb-3">Recibe tips y actualizaciones sobre desarrollo web</p>
-            </div>
           </div>
         </div>
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-muted flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-sm text-muted-foreground">© {currentYear} Mort.dev. Todos los derechos reservados.</div>
+          <div className="text-sm text-muted-foreground">© {currentYear} MiguelMort.dev. Todos los derechos reservados.</div>
           <div className="flex gap-6 text-sm text-muted-foreground">
             <Link href="/privacy" className="hover:text-primary transition-colors">
               Política de Privacidad

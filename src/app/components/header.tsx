@@ -33,7 +33,7 @@ export default function Header() {
       <div className="w-full container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
         <Link href="/">
-          <span className="text-xl font-bold gradient-text">MiguelMort.tech</span>
+          <span className="text-xl font-bold gradient-text">MiguelMort.dev</span>
         </Link>
 
         {/* Desktop Navigation */}
