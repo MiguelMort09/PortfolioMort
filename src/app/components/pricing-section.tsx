@@ -1,6 +1,12 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Check, Star } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Check, Star } from "lucide-react";
 
 const plans = [
   {
@@ -47,7 +53,7 @@ const plans = [
     ],
     popular: false,
   },
-]
+];
 
 export default function PricingSection() {
   return (
@@ -72,7 +78,9 @@ export default function PricingSection() {
             <Card
               key={index}
               className={`relative group bg-card/50 border-muted hover:border-primary/50 transition-all duration-300 backdrop-blur-sm ${
-                plan.popular ? "border-primary/50 shadow-lg shadow-primary/10 scale-105" : ""
+                plan.popular
+                  ? "border-primary/50 shadow-lg shadow-primary/10 scale-105"
+                  : ""
               }`}
             >
               {plan.popular && (
@@ -85,10 +93,16 @@ export default function PricingSection() {
               )}
 
               <CardHeader className="text-center pb-8">
-                <CardTitle className="text-2xl text-foreground">{plan.name}</CardTitle>
-                <CardDescription className="text-base text-muted-foreground">{plan.description}</CardDescription>
+                <CardTitle className="text-2xl text-foreground">
+                  {plan.name}
+                </CardTitle>
+                <CardDescription className="text-base text-muted-foreground">
+                  {plan.description}
+                </CardDescription>
                 <div className="mt-6">
-                  <span className="text-4xl font-bold gradient-text">{plan.price}</span>
+                  <span className="text-4xl font-bold gradient-text">
+                    {plan.price}
+                  </span>
                   <span className="text-muted-foreground"> USD</span>
                 </div>
               </CardHeader>
@@ -98,7 +112,9 @@ export default function PricingSection() {
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start gap-3">
                       <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-muted-foreground">{feature}</span>
+                      <span className="text-sm text-muted-foreground">
+                        {feature}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -119,5 +135,5 @@ export default function PricingSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
