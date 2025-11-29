@@ -51,7 +51,7 @@ const experiences = [
     company: "GRUPO ICARUS",
     position: "Full Stack Developer",
     period: "Jul 2022 - Nov 2023",
-    location: "Mérida, Yucatán",
+    location: "Campeche, México",
     description:
       "Desarrollo full stack de soluciones a medida para clientes corporativos. Liderazgo técnico en proyectos de e-commerce y sistemas administrativos. Gestión de ciclo completo de desarrollo desde la toma de requerimientos hasta el despliegue en producción.",
     achievements: [
@@ -111,9 +111,8 @@ export default function ExperienceSection() {
             {experiences.map((exp, index) => (
               <motion.div
                 key={index}
-                className={`relative flex items-center ${
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
+                className={`relative flex items-center ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                  }`}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.4 }}
@@ -134,14 +133,11 @@ export default function ExperienceSection() {
 
                 {/* Contenido */}
                 <div
-                  className={`w-full md:w-1/2 ${
-                    index % 2 === 0 ? "md:pr-12 pl-12" : "md:pl-12 pl-12"
-                  }`}
+                  className={`w-full md:w-1/2 ${index % 2 === 0 ? "md:pr-12 pl-12" : "md:pl-12 pl-12"
+                    }`}
                 >
                   <Card className="bg-card/50 border-muted hover:border-primary/50 transition-all duration-300 hover-glow overflow-hidden backdrop-blur-sm group">
-                    <div
-                      className={`absolute top-0 ${index % 2 === 0 ? "right-0" : "left-0"} w-1 h-full bg-gradient-to-b ${exp.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
-                    />
+                    <div className={`absolute top-0 w-1 h-full bg-gradient-to-b ${exp.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300 left-0 ${index % 2 === 0 ? 'md:left-auto md:right-0' : ''}`} />
                     <CardContent className="p-6 relative">
                       <div className="mb-4">
                         <div

@@ -63,11 +63,11 @@ export default function AboutSection() {
       viewport={{ once: true, amount: 0.3 }}
       variants={containerVariants}
     >
-      <div className="w-full lg:max-w-7xl mx-auto container px-4">
-        <motion.div className="grid gap-8 lg:grid-cols-2 items-center">
+      <div className="w-full lg:max-w-7xl mx-auto container px-4 sm:px-6 lg:px-8">
+        <motion.div className="grid gap-8 sm:gap-12 lg:gap-16 lg:grid-cols-2 items-center">
           {/* Foto Personal */}
           <motion.div
-            className="relative mx-auto w-72 h-72 lg:w-96 lg:h-96 profile-container"
+            className="relative mx-auto w-64 h-64 sm:w-72 sm:h-72 lg:w-96 lg:h-96 profile-container"
             variants={itemVariants}
           >
             {/* Fondo decorativo con patrón de puntos */}
@@ -142,19 +142,19 @@ export default function AboutSection() {
           </motion.div>
 
           {/* Contenido Personal */}
-          <motion.div className="space-y-6" variants={itemVariants}>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+          <motion.div className="space-y-4 sm:space-y-6" variants={itemVariants}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-3 sm:mb-4 text-center lg:text-left">
               Más allá del <span className="gradient-text">código</span>
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mb-6" />
 
-            <p className="text-muted-foreground leading-relaxed mb-4">
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-3 sm:mb-4 text-center lg:text-left">
               ¡Hola! Soy <span className="text-primary font-semibold">Miguel Uicab</span>, pero mis amigos me llaman{" "}
               <span className="text-primary font-semibold">Mort</span>. Soy un apasionado del automovilismo y el boxeo,
               deportes que me han enseñado que, aunque son individuales, el éxito siempre depende del trabajo realizado en equipo.
               Esta mentalidad la aplico tanto en mi vida personal como profesional, buscando siempre la superación y el desarrollo constante de mis habilidades.
             </p>
-            <p className="text-muted-foreground leading-relaxed mb-6">
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6 text-center lg:text-left">
               <span className="text-primary font-semibold">Fun fact:</span> Soy coleccionista de Funko Pops de Fórmula 1 y un entusiasta del whisky,
               dos pasiones que disfruto en mis momentos libres.
             </p>

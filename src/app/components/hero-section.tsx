@@ -33,8 +33,8 @@ export default function HeroSection() {
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
-      <div className="container mx-auto relative px-4 py-20 grid lg:grid-cols-2 gap-8">
-        <motion.div className="space-y-8" variants={containerVariants}>
+      <div className="container mx-auto relative px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 grid lg:grid-cols-2 gap-8 lg:gap-12">
+        <motion.div className="space-y-6 sm:space-y-8" variants={containerVariants}>
           {/* Badge */}
           <motion.div
             variants={itemVariants}
@@ -45,25 +45,25 @@ export default function HeroSection() {
           </motion.div>
 
           {/* Personal Introduction */}
-          <motion.div className="space-y-4" variants={itemVariants}>
-            <p className="text-lg text-muted-foreground">Hola, soy</p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
+          <motion.div className="space-y-3 sm:space-y-4" variants={itemVariants}>
+            <p className="text-base sm:text-lg text-muted-foreground">Hola, soy</p>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
               <span className="gradient-text">Miguel Uicab</span>
             </h1>
           </motion.div>
 
-                    {/* Role & Expertise */}
-                    <motion.div className="space-y-4" variants={itemVariants}>
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground">
-                            Desarrollador Web <span className="gradient-text">Fullstack</span>
-                        </h2>
-                        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-                            Ingeniero en Tecnologías de Software especializado en{" "}
-                            <span className="text-primary font-semibold">Laravel </span>y tecnologías modernas como{" "}
-                            <span className="text-primary font-semibold">React</span>. Desarrollador orientado a crear soluciones web
-                            modernas, escalables y optimizadas.
-                        </p>
-                    </motion.div>
+          {/* Role & Expertise */}
+          <motion.div className="space-y-3 sm:space-y-4" variants={itemVariants}>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
+              Desarrollador Web <span className="gradient-text">Fullstack</span>
+            </h2>
+            <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+              Ingeniero en Tecnologías de Software especializado en{" "}
+              <span className="text-primary font-semibold">Laravel </span>y tecnologías modernas como{" "}
+              <span className="text-primary font-semibold">React</span>. Desarrollador orientado a crear soluciones web
+              modernas, escalables y optimizadas.
+            </p>
+          </motion.div>
 
           {/* CTA Buttons */}
           <motion.div
