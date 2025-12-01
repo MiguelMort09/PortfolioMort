@@ -97,22 +97,20 @@ function getNotificationTemplate(name: string, email: string, message: string) {
             margin-bottom: 20px;
         }
         .social-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            background: #0a0a0a;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(96, 165, 250, 0.1);
+            border: 1px solid rgba(96, 165, 250, 0.3);
             border-radius: 6px;
-            color: #a1a1aa;
+            color: #60a5fa;
             text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
             transition: all 0.2s ease;
         }
         .social-link:hover {
-            background: #1a1a1a;
-            border-color: rgba(255, 255, 255, 0.2);
-            color: #ffffff;
+            background: rgba(96, 165, 250, 0.2);
+            border-color: #60a5fa;
         }
         .footer-text {
             font-size: 12px;
@@ -154,15 +152,9 @@ function getNotificationTemplate(name: string, email: string, message: string) {
             <p>Puedes responder directamente a este email</p>
             
             <div class="social-links">
-                <a href="https://github.com/MiguelMort09" class="social-link" title="GitHub" style="text-decoration: none;">
-                    <span style="font-size: 13px; font-weight: 600; color: #60a5fa;">GitHub</span>
-                </a>
-                <a href="https://www.linkedin.com/in/miguel-ernesto-uicab-canabal-2b72601bb/" class="social-link" title="LinkedIn" style="text-decoration: none;">
-                    <span style="font-size: 13px; font-weight: 600; color: #60a5fa;">LinkedIn</span>
-                </a>
-                <a href="mailto:devmigueluicab@gmail.com" class="social-link" title="Email" style="text-decoration: none;">
-                    <span style="font-size: 13px; font-weight: 600; color: #60a5fa;">Email</span>
-                </a>
+                <a href="https://github.com/MiguelMort09" class="social-link" title="GitHub">GitHub</a>
+                <a href="https://www.linkedin.com/in/miguel-ernesto-uicab-canabal-2b72601bb/" class="social-link" title="LinkedIn">LinkedIn</a>
+                <a href="mailto:devmigueluicab@gmail.com" class="social-link" title="Email">Email</a>
             </div>
             
             <p class="footer-text">© 2024 Miguel Mort • Desarrollador Fullstack</p>
@@ -278,22 +270,20 @@ function getConfirmationTemplate(name: string, message: string) {
             margin-bottom: 20px;
         }
         .social-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            background: #0a0a0a;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(96, 165, 250, 0.1);
+            border: 1px solid rgba(96, 165, 250, 0.3);
             border-radius: 6px;
-            color: #a1a1aa;
+            color: #60a5fa;
             text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
             transition: all 0.2s ease;
         }
         .social-link:hover {
-            background: #1a1a1a;
-            border-color: rgba(255, 255, 255, 0.2);
-            color: #ffffff;
+            background: rgba(96, 165, 250, 0.2);
+            border-color: #60a5fa;
         }
         .footer-text {
             font-size: 12px;
@@ -337,15 +327,9 @@ function getConfirmationTemplate(name: string, message: string) {
             <p>Si necesitas algo urgente, responde directamente a este email</p>
             
             <div class="social-links">
-                <a href="https://github.com/MiguelMort09" class="social-link" title="GitHub" style="text-decoration: none;">
-                    <span style="font-size: 13px; font-weight: 600; color: #60a5fa;">GitHub</span>
-                </a>
-                <a href="https://www.linkedin.com/in/miguel-ernesto-uicab-canabal-2b72601bb/" class="social-link" title="LinkedIn" style="text-decoration: none;">
-                    <span style="font-size: 13px; font-weight: 600; color: #60a5fa;">LinkedIn</span>
-                </a>
-                <a href="mailto:devmigueluicab@gmail.com" class="social-link" title="Email" style="text-decoration: none;">
-                    <span style="font-size: 13px; font-weight: 600; color: #60a5fa;">Email</span>
-                </a>
+                <a href="https://github.com/MiguelMort09" class="social-link" title="GitHub">GitHub</a>
+                <a href="https://www.linkedin.com/in/miguel-ernesto-uicab-canabal-2b72601bb/" class="social-link" title="LinkedIn">LinkedIn</a>
+                <a href="mailto:devmigueluicab@gmail.com" class="social-link" title="Email">Email</a>
             </div>
             
             <p class="footer-text">© 2024 Miguel Mort • Desarrollador Fullstack</p>
