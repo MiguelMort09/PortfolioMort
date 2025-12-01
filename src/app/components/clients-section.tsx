@@ -134,7 +134,7 @@ export default function ClientsSection() {
 
                       {/* Tech Stack */}
                       <div className="flex justify-center flex-wrap gap-2 mb-4">
-                        {client.dev.map((tech, techIndex) => (
+                        {client.tech.map((tech, techIndex) => (
                           <span
                             key={techIndex}
                             className="text-xs px-2 py-1 bg-muted text-muted-foreground rounded border"
