@@ -69,8 +69,8 @@ export default function ContactSection() {
     {
       icon: Mail,
       title: "Email",
-      value: "devmigueluicab@gmail.com",
-      href: "mailto:devmigueluicab@gmail.com",
+      value: "contact@miguelmort.dev",
+      href: "mailto:contact@miguelmort.dev",
       color: "text-blue-500",
     },
     {
