@@ -18,20 +18,42 @@ export default function ContactSection() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError("");
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formState),
+      });
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setFormState({ name: "", email: "", message: "" });
+      const data = await response.json();
 
-    // Reset success message after 3 seconds
-    setTimeout(() => setIsSubmitted(false), 3000);
+      if (!response.ok) {
+        throw new Error(data.error || "Error al enviar el mensaje");
+      }
+
+      setIsSubmitted(true);
+      setFormState({ name: "", email: "", message: "" });
+
+      // Reset success message after 5 seconds
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (err) {
+      setError(
+        err instanceof Error ? err.message : "Error al enviar el mensaje"
+      );
+      // Clear error after 5 seconds
+      setTimeout(() => setError(""), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -178,6 +200,7 @@ export default function ContactSection() {
                       onChange={handleChange}
                       required
                       className="bg-background/50"
+                      disabled={isSubmitting}
                     />
                   </div>
                   <div className="space-y-2">
@@ -193,6 +216,7 @@ export default function ContactSection() {
                       onChange={handleChange}
                       required
                       className="bg-background/50"
+                      disabled={isSubmitting}
                     />
                   </div>
                   <div className="space-y-2">
@@ -207,8 +231,24 @@ export default function ContactSection() {
                       onChange={handleChange}
                       required
                       className="min-h-[150px] bg-background/50"
+                      disabled={isSubmitting}
                     />
                   </div>
+
+                  {/* Error Message */}
+                  {error && (
+                    <div className="p-3 bg-red-100 border border-red-400 text-red-700 rounded-md text-sm">
+                      {error}
+                    </div>
+                  )}
+
+                  {/* Success Message */}
+                  {isSubmitted && (
+                    <div className="p-3 bg-green-100 border border-green-400 text-green-700 rounded-md text-sm">
+                      ¡Mensaje enviado exitosamente! Te responderé pronto.
+                    </div>
+                  )}
+
                   <Button
                     type="submit"
                     className="w-full"
@@ -216,8 +256,6 @@ export default function ContactSection() {
                   >
                     {isSubmitting ? (
                       "Enviando..."
-                    ) : isSubmitted ? (
-                      "¡Mensaje Enviado!"
                     ) : (
                       <>
                         Enviar Mensaje <Send className="w-4 h-4 ml-2" />
