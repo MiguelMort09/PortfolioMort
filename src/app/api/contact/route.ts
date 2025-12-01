@@ -364,7 +364,7 @@ export async function POST(request: Request) {
     // 1. Enviar notificación a ti
     await resend.emails.send({
       from: "Portfolio <contacto@miguelmort.dev>",
-      to: ["contacto@miguelmort.dev"],
+      to: ["devmigueluicab@miguelmort.dev"],
       replyTo: email,
       subject: `🔔 Nuevo mensaje de ${name}`,
       html: getNotificationTemplate(name, email, message),
