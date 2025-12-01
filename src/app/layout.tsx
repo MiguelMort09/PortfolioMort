@@ -10,8 +10,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "MiguelMort.tech | Ingeniero de Software & Desarrollador Web",
-    template: "%s | MiguelMort.tech",
+    default: "MiguelMort.dev | Ingeniero de Software & Desarrollador Web",
+    template: "%s | MiguelMort.dev",
   },
   description:
     "Portfolio de Miguel E. Uicab Canabal. Ingeniero en Tecnologías de Software especializado en Laravel, React, y desarrollo de aplicaciones web modernas.",
@@ -26,29 +26,29 @@ export const metadata: Metadata = {
     "Full Stack",
   ],
   authors: [
-    { name: "Miguel E. Uicab Canabal", url: "https://miguelmort.tech" },
+    { name: "Miguel E. Uicab Canabal", url: "https://miguelmort.dev" },
   ],
   creator: "Miguel E. Uicab Canabal",
   openGraph: {
     type: "website",
     locale: "es_MX",
-    url: "https://miguelmort.tech",
-    title: "MiguelMort.tech | Ingeniero de Software",
+    url: "https://miguelmort.dev",
+    title: "MiguelMort.dev | Ingeniero de Software",
     description:
       "Transformando ideas en soluciones digitales robustas. Especialista en Laravel y arquitecturas escalables.",
-    siteName: "MiguelMort.tech",
+    siteName: "MiguelMort.dev",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "MiguelMort.tech Portfolio",
+        alt: "MiguelMort.dev Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "MiguelMort.tech | Ingeniero de Software",
+    title: "MiguelMort.dev | Ingeniero de Software",
     description:
       "Portfolio de Miguel E. Uicab Canabal. Especialista en Laravel y desarrollo web.",
     creator: "@MiguelMort",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://miguelmort.tech",
+    canonical: "https://miguelmort.dev",
   },
 };
 

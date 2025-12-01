@@ -7,7 +7,7 @@ const JsonLd = () => {
       {
         "@type": "Person",
         name: "Miguel E. Uicab Canabal",
-        url: "https://miguelmort.tech",
+        url: "https://miguelmort.dev",
         jobTitle: "Ingeniero en Tecnologías de Software",
         sameAs: [
           "https://github.com/MiguelMort09",
@@ -16,8 +16,8 @@ const JsonLd = () => {
       },
       {
         "@type": "WebSite",
-        name: "MiguelMort.tech",
-        url: "https://miguelmort.tech",
+        name: "MiguelMort.dev",
+        url: "https://miguelmort.dev",
         description:
           "Portfolio de Miguel E. Uicab Canabal - Ingeniero de Software especializado en Laravel y desarrollo web.",
         author: {

@@ -141,7 +141,7 @@ export default function ProjectsSection() {
 
                     {/* Tech Stack */}
                     <div className="flex flex-wrap gap-1 mb-4">
-                      {project.tech.map((tech, techIndex) => (
+                      {project.dev.map((tech, techIndex) => (
                         <span
                           key={techIndex}
                           className="text-xs px-2 py-1 bg-muted text-muted-foreground rounded border"

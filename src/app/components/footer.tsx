@@ -18,7 +18,7 @@ export default function Footer() {
       href: "https://www.linkedin.com/in/miguel-ernesto-uicab-canabal-2b72601bb/",
       icon: Linkedin,
     },
-    { name: "Email", href: "mailto:contact@miguelmort.tech", icon: Mail },
+    { name: "Email", href: "mailto:contact@miguelmort.dev", icon: Mail },
   ];
 
   return (
