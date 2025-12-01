@@ -18,7 +18,7 @@ export default function Footer() {
       href: "https://www.linkedin.com/in/miguel-ernesto-uicab-canabal-2b72601bb/",
       icon: Linkedin,
     },
-    { name: "Email", href: "mailto:contact@miguelmort.dev", icon: Mail },
+    { name: "Email", href: "mailto:contacto@miguelmort.dev", icon: Mail },
   ];
 
   return (
@@ -48,7 +48,7 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-2">
               <Mail className="h-4 w-4 text-primary" />
-              <span>contact@miguelmort.dev</span>
+              <span>contacto@miguelmort.dev</span>
             </div>
             <div className="flex items-center gap-2">
               <Phone className="h-4 w-4 text-primary" />

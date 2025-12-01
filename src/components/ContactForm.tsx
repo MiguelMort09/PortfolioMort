@@ -201,10 +201,10 @@ export default function ContactForm() {
           <p className="text-zinc-500 text-sm text-center">
             También puedes escribirme directamente a{' '}
             <a 
-              href="mailto:contact@miguelmort.dev" 
+              href="mailto:contacto@miguelmort.dev" 
               className="text-blue-400 hover:text-blue-300 transition"
             >
-              contact@miguelmort.dev
+              contacto@miguelmort.dev
             </a>
           </p>
         </div>

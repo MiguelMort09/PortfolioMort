@@ -282,10 +282,10 @@ export default function TermsOfService() {
                 <p>
                   Email:{" "}
                   <a
-                    href="mailto:contact@mort.dev"
+                    href="mailto:contacto@mort.dev"
                     className="text-primary hover:underline"
                   >
-                    contact@mort.dev
+                    contacto@mort.dev
                   </a>
                 </p>
                 <p>Teléfono: +52 (555) 123-4567</p>

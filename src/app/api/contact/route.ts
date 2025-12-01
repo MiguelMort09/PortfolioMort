@@ -154,7 +154,7 @@ function getNotificationTemplate(name: string, email: string, message: string) {
             <div class="social-links">
                 <a href="https://github.com/MiguelMort09" class="social-link" title="GitHub">GitHub</a>
                 <a href="https://www.linkedin.com/in/miguel-ernesto-uicab-canabal-2b72601bb/" class="social-link" title="LinkedIn">LinkedIn</a>
-                <a href="mailto:contact@miguelmort.dev" class="social-link" title="Email">Email</a>
+                <a href="mailto:contacto@miguelmort.dev" class="social-link" title="Email">Email</a>
             </div>
             
             <p class="footer-text">© 2024 Miguel Mort • Desarrollador Fullstack</p>
@@ -329,7 +329,7 @@ function getConfirmationTemplate(name: string, message: string) {
             <div class="social-links">
                 <a href="https://github.com/MiguelMort09" class="social-link" title="GitHub">GitHub</a>
                 <a href="https://www.linkedin.com/in/miguel-ernesto-uicab-canabal-2b72601bb/" class="social-link" title="LinkedIn">LinkedIn</a>
-                <a href="mailto:contact@miguelmort.dev" class="social-link" title="Email">Email</a>
+                <a href="mailto:contacto@miguelmort.dev" class="social-link" title="Email">Email</a>
             </div>
             
             <p class="footer-text">© 2024 Miguel Mort • Desarrollador Fullstack</p>
@@ -364,7 +364,7 @@ export async function POST(request: Request) {
     // 1. Enviar notificación a ti
     await resend.emails.send({
       from: "Portfolio <contacto@miguelmort.dev>",
-      to: ["contact@miguelmort.dev"],
+      to: ["contacto@miguelmort.dev"],
       replyTo: email,
       subject: `🔔 Nuevo mensaje de ${name}`,
       html: getNotificationTemplate(name, email, message),
@@ -374,7 +374,7 @@ export async function POST(request: Request) {
     await resend.emails.send({
       from: "Miguel Mort <contacto@miguelmort.dev>",
       to: [email],
-      replyTo: "contact@miguelmort.dev",
+      replyTo: "contacto@miguelmort.dev",
       subject: `✅ Gracias por tu mensaje, ${name}`,
       html: getConfirmationTemplate(name, message),
     });
